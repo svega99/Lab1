@@ -51,5 +51,11 @@ Creation, commissioning and coordination of threads.
 	Asi en la clase Galgo solo seria necesario llamar a un metodo que no generara inconsistencias.
 	
 	![Alt text](img/3.3.3.JPG "CountThread")
+	
+	Comprobando nos damos cuenta que ya no hay posiciones repetidas.
+	
+	![Alt text](img/3.3.4.JPG "CountThread")
+	![Alt text](img/3.3.5.JPG "CountThread")
+	![Alt text](img/3.3.6.JPG "CountThread")
 
 4.	Implement the pause and continue functionalities. With these, when "Stop" is clicked, all the threads of the greyhounds should fall asleep, and when "Continue" is clicked they should wake up and continue with the race. Design a solution that allows you to do this using the synchronization mechanisms with the Locks primitives provided by the language (wait and notifyAll).
