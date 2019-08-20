@@ -67,16 +67,27 @@ public class PiDigits {
         }
         ArrayList<PiThread> hilos= new ArrayList<PiThread>();
         PiThread pt;
-        int comienzo = start;
-        int fin;
+        
+        int dis= count-start;
+        int l = (int) Math.ceil((double)count / (double)N);
+        
+        
         for (int i=0; i<N;i++) {
-        	fin= ((count/N)*(i+1))+start;
-        	pt = new PiThread(comienzo,fin);
+        	//fin= ((count/N)*(i+1))+start;
+        	//fin = comienzo + l;
+        	if ((i+1)*l>count && (count-(i*l)>0)) {
+        		pt = new PiThread((i*l)+start,((count-(i*l))));
+        	}
+        	else {
+        		pt = new PiThread((i*l)+start,l);
+        	}
+        	
         	hilos.add(pt);
         	pt.start();
-        	comienzo=fin+1;
+        	//comienzo=fin+1;
         }
         
+
         for (PiThread pit:hilos) {
         	try {
 				pit.join();
@@ -88,7 +99,10 @@ public class PiDigits {
         byte[] digits = new byte[count];
         int k=0;
         for (PiThread pit:hilos) {
-        	//System.arraycopy(pit.getDigits(),0,digits,pit.getDigits().length,pit.getDigits().length);
+        	//System.out.println(digits.length+" digitos");
+        	//System.out.println(Main.bytesToHex(pit.getDigits()));
+        	
+        	//System.arraycopy(pit.getDigits(),0,digits,k,pit.getDigits().length);
         	//k=k+pit.getDigits().length;
         	if (hilos.get(0).equals(pit)) {
         		digits=pit.getDigits();
@@ -96,11 +110,8 @@ public class PiDigits {
         	else {
         		digits=ConcatenarArray(digits,pit.getDigits());
         	}
-        	//System.out.println(Main.bytesToHex(digits));
-        
+        	
         }
-        
-        
 
         return digits;
     }

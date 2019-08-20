@@ -40,6 +40,7 @@ public class PiCalcTest {
         for (int start = 0; start < expected.length; start++) {
             for (int count = 0; count < expected.length - start; count++) {
                 byte[] digits = PiDigits.getDigits(start, count);
+                System.out.println(Main.bytesToHex(digits));
                 assertEquals(count, digits.length);
 
                 for (int i = 0; i < digits.length; i++) {
@@ -67,6 +68,7 @@ public class PiCalcTest {
         for (int start = 0; start < expected.length; start++) {
             for (int count = 0; count < expected.length - start; count++) {
                 byte[] digits = PiDigits.getDigits(start, count,2);
+                System.out.println(Main.bytesToHex(digits));
                 assertEquals(count, digits.length);
 
                 for (int i = 0; i < digits.length; i++) {
@@ -94,6 +96,7 @@ public class PiCalcTest {
         for (int start = 0; start < expected.length; start++) {
             for (int count = 0; count < expected.length - start; count++) {
                 byte[] digits = PiDigits.getDigits(start, count,3);
+                System.out.println(Main.bytesToHex(digits));
                 assertEquals(count, digits.length);
 
                 for (int i = 0; i < digits.length; i++) {
