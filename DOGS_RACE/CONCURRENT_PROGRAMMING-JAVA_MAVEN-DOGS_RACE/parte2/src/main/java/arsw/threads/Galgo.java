@@ -18,8 +18,23 @@ public class Galgo extends Thread {
 		this.regl=reg;
 	}
 
+	public void pause() {
+		synchronized (this) {
+    	    while (MainCanodromo.isPausa()) {
+    	    	try {
+					this.wait();
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+    	    }
+    	}
+	}
+	
+	
 	public void corra() throws InterruptedException {
-		while (paso < carril.size()) {			
+		while (paso < carril.size()) {	
+			pause();
 			Thread.sleep(100);
 			carril.setPasoOn(paso++);
 			carril.displayPasos(paso);

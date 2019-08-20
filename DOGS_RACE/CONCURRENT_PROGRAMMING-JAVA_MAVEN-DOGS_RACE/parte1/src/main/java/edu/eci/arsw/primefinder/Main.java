@@ -5,7 +5,7 @@ import java.util.TimerTask;
 
 public class Main {
 	
-	private boolean pausa=false;
+	private static boolean Pausa=false;
 
 	public static void main(String[] args) {
 		
@@ -17,14 +17,22 @@ public class Main {
 		pft3.start();
 		
 		
+		
 	}
 	
-	new Timer().schedule(new TimerTask() {
-	    @Override
-	    public void run() {
-	        if (!pausa) {
-	        	
-	        }
-	    }
-	}, 5000);
+	public static boolean isPausa() {
+		return Pausa;
+	}
+
+
+
+	public static void setPausa(boolean pausa) {
+		Pausa = pausa;
+		
+	}
+	
+	
+	        
+
+	       
 }

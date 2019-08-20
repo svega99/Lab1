@@ -1,5 +1,11 @@
 # BBP Formula
 
+
+## Compile and run instructions.
+
+
+
+
 ## Part I - Introduction to Java Threads
 1.	As reviewed in the readings, complete the CountThread classes, so that they define the life cycle of a thread that prints the numbers between A and B. 
  
@@ -43,6 +49,10 @@ For this exercise you want to calculate, in the shortest possible time, and in a
 	Implementacion de una nueva prueba JUnit que usa el nuevo metodo getDigits() para probar con 1,2 y 3 hilos.
 	
 	![Alt text](img/2.2.3.JPG)
+	
+	Ejecución de las pruebas.
+	
+	![Alt text](img/2.2.4.JPG)
 
 
 ## Part III - Performance Evaluation

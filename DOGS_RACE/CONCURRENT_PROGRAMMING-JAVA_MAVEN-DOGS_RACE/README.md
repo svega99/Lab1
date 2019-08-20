@@ -1,5 +1,8 @@
 # Dogs Race case
 
+## Compile and run instructions.
+
+
 ## Part I
 Creation, commissioning and coordination of threads.
 
@@ -59,3 +62,14 @@ Creation, commissioning and coordination of threads.
 	![Alt text](img/3.3.6.JPG "CountThread")
 
 4.	Implement the pause and continue functionalities. With these, when "Stop" is clicked, all the threads of the greyhounds should fall asleep, and when "Continue" is clicked they should wake up and continue with the race. Design a solution that allows you to do this using the synchronization mechanisms with the Locks primitives provided by the language (wait and notifyAll).
+	
+	Se implementa un wait en cada hilo que sea activado cada que la carrera se pause y un notifyAll que notifique cuando se reanude.
+	![Alt text](img/3.4.1.JPG "CountThread")
+	
+	![Alt text](img/3.4.2.JPG "CountThread")
+	
+	Durante la ejecucion observamos que la carrera se detiene cuando se oprime "Stop" y se reanuda y termina cuando se oprime "Continue"
+	
+	![Alt text](img/3.4.3.JPG "CountThread")
+	
+	![Alt text](img/3.4.4.JPG "CountThread")
