@@ -12,6 +12,8 @@ public class MainCanodromo {
     private static Canodromo can;
 
     private static RegistroLlegada reg = new RegistroLlegada();
+    
+    private static boolean Pausa = false; 
 
     public static void main(String[] args) {
         can = new Canodromo(17, 100);
@@ -62,6 +64,22 @@ public class MainCanodromo {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         System.out.println("Carrera pausada!");
+                        Pausa=true;
+                        for (int i = 0; i < can.getNumCarriles(); i++) {
+                        	
+                        	synchronized (galgos[i]) {
+                        	    while (Pausa) {
+                        	    	try {
+										galgos[i].wait();
+									} catch (InterruptedException e1) {
+										// TODO Auto-generated catch block
+										e1.printStackTrace();
+									}
+                        	    }
+                        	}
+                        
+                            
+                        }
                     }
                 }
         );
@@ -71,6 +89,15 @@ public class MainCanodromo {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         System.out.println("Carrera reanudada!");
+                        Pausa=false;
+                        for (int i = 0; i < can.getNumCarriles(); i++) {
+                        	synchronized (galgos[i]) {
+	                    	    
+	                    	    galgos[i].notifyAll();
+                    	    
+                    	}
+                        	
+                        }
                     }
                 }
         );
