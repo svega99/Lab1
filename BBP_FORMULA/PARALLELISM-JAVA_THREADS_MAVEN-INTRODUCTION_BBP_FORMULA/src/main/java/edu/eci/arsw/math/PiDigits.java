@@ -71,7 +71,6 @@ public class PiDigits {
         int dis= count-start;
         int l = (int) Math.ceil((double)count / (double)N);
         
-        
         for (int i=0; i<N;i++) {
         	//fin= ((count/N)*(i+1))+start;
         	//fin = comienzo + l;
