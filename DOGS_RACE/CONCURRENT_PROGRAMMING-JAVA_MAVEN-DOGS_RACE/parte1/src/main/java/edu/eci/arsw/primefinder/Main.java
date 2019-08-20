@@ -1,6 +1,11 @@
 package edu.eci.arsw.primefinder;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Main {
+	
+	private boolean pausa=false;
 
 	public static void main(String[] args) {
 		
@@ -10,5 +15,16 @@ public class Main {
 		pft.start();	
 		pft2.start();
 		pft3.start();
+		
+		
 	}
+	
+	new Timer().schedule(new TimerTask() {
+	    @Override
+	    public void run() {
+	        if (!pausa) {
+	        	
+	        }
+	    }
+	}, 5000);
 }

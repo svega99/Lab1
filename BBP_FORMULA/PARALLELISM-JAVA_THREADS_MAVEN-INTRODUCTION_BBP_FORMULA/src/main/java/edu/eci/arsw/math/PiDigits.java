@@ -67,25 +67,18 @@ public class PiDigits {
         }
         ArrayList<PiThread> hilos= new ArrayList<PiThread>();
         PiThread pt;
-        
-        int dis= count-start;
+     
         int l = (int) Math.ceil((double)count / (double)N);
-        
-        for (int i=0; i<N;i++) {
-        	//fin= ((count/N)*(i+1))+start;
-        	//fin = comienzo + l;
-        	if ((i+1)*l>count && (count-(i*l)>0)) {
-        		pt = new PiThread((i*l)+start,((count-(i*l))));
-        	}
-        	else {
-        		pt = new PiThread((i*l)+start,l);
-        	}
-        	
-        	hilos.add(pt);
-        	pt.start();
-        	//comienzo=fin+1;
-        }
-        
+	        for (int i=0; i<N;i++) {
+	        	if ((i+1)*l>count && (count-(i*l)>0)) {
+	        		pt = new PiThread((i*l)+start,((count-(i*l))));
+	        	}
+	        	else {
+	        		pt = new PiThread((i*l)+start,l);
+	        	}
+	        	hilos.add(pt);
+	        	pt.start();
+	        }
 
         for (PiThread pit:hilos) {
         	try {
@@ -96,13 +89,7 @@ public class PiDigits {
         }
         
         byte[] digits = new byte[count];
-        int k=0;
         for (PiThread pit:hilos) {
-        	//System.out.println(digits.length+" digitos");
-        	//System.out.println(Main.bytesToHex(pit.getDigits()));
-        	
-        	//System.arraycopy(pit.getDigits(),0,digits,k,pit.getDigits().length);
-        	//k=k+pit.getDigits().length;
         	if (hilos.get(0).equals(pit)) {
         		digits=pit.getDigits();
         	}
@@ -111,8 +98,15 @@ public class PiDigits {
         	}
         	
         }
-
-        return digits;
+        if (digits.length>count) {
+	        byte[] digits2 = new byte[count];
+	        for (int i=0; i<count;i++) {
+	        	digits2[i]=digits[i];
+	   
+	        }
+	        digits=digits2;
+        }
+	    return digits;
     }
     
     

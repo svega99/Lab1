@@ -29,8 +29,20 @@
 The BBP formula (Bailey – Borwein – Plouffe formula) is an algorithm that allows you to calculate the nth digit of PI in base 16, with the particularity of not needing to calculate us n-1 previous digits. This feature makes it possible to convert the problem of calculating a massive number of PI digits (in base 16) to a shamefully parallel one. In this repository you will find the implementation, along with a set of tests.
 For this exercise you want to calculate, in the shortest possible time, and in a single machine (taking advantage of the multi-core characteristics of the same) at least the first million digits of PI (in base 16).
 1.	Create a Thread type class that represents the life cycle of a thread that calculates a portion of the required digits. 
+	
+	![Alt text](img/2.2.1.JPG)
+	
 2.	Have the PiDigits.getDigits() function receive as an additional parameter an N value, corresponding to the number of threads between which the solution is to be parallelized. Have that function wait until the N threads finish solving the problem to combine the answers and then return the result. For this, review the join method of the Java concurrency API. 
+	
+	Implementacion del nuevo metodo getDigits() usando join()
+	
+	![Alt text](img/2.2.2.JPG)
+	
 3.	Adjust the JUnit tests, considering the cases of using 1, 2 or 3 threads (the last one to consider an odd number of threads!)
+	
+	Implementacion de una nueva prueba JUnit que usa el nuevo metodo getDigits() para probar con 1,2 y 3 hilos.
+	
+	![Alt text](img/2.2.3.JPG)
 
 
 ## Part III - Performance Evaluation

@@ -40,7 +40,6 @@ public class PiCalcTest {
         for (int start = 0; start < expected.length; start++) {
             for (int count = 0; count < expected.length - start; count++) {
                 byte[] digits = PiDigits.getDigits(start, count);
-                System.out.println(Main.bytesToHex(digits));
                 assertEquals(count, digits.length);
 
                 for (int i = 0; i < digits.length; i++) {
@@ -51,7 +50,7 @@ public class PiCalcTest {
     }
     
     @Test
-    public void piGenTest1Thread() throws Exception {
+    public void piGenTestMultipleThreads() throws Exception {
 
         byte[] expected = new byte[]{
             0x2, 0x4, 0x3, 0xF, 0x6, 0xA, 0x8, 0x8,
@@ -64,74 +63,21 @@ public class PiCalcTest {
             0xE, 0xC, 0x4, 0xE, 0x6, 0xC, 0x8, 0x9,
             0x4, 0x5, 0x2, 0x8, 0x2, 0x1, 0xE, 0x6,
             0x3, 0x8, 0xD, 0x0, 0x1, 0x3, 0x7, 0x7,};
+        for (int k=1;k<=3;k++) {
+	        for (int start = 0; start < expected.length; start++) {
+	            for (int count = 0; count < expected.length - start; count++) {
+	            	
+	                byte[] digits = PiDigits.getDigits(start, count,k);
 
-        for (int start = 0; start < expected.length; start++) {
-            for (int count = 0; count < expected.length - start; count++) {
-                byte[] digits = PiDigits.getDigits(start, count,1);
-                System.out.println(Main.bytesToHex(digits));
-                assertEquals(count, digits.length);
-
-                for (int i = 0; i < digits.length; i++) {
-                    assertEquals(expected[start + i], digits[i]);
-                }
-            }
+	                assertEquals(count, digits.length);
+	
+	                for (int i = 0; i < digits.length; i++) {
+	                    assertEquals(expected[start + i], digits[i]);
+	                }
+	            }
+	        }
         }
     }
     
-    @Test
-    public void piGenTest2Threads() throws Exception {
-
-        byte[] expected = new byte[]{
-            0x2, 0x4, 0x3, 0xF, 0x6, 0xA, 0x8, 0x8,
-            0x8, 0x5, 0xA, 0x3, 0x0, 0x8, 0xD, 0x3,
-            0x1, 0x3, 0x1, 0x9, 0x8, 0xA, 0x2, 0xE,
-            0x0, 0x3, 0x7, 0x0, 0x7, 0x3, 0x4, 0x4,
-            0xA, 0x4, 0x0, 0x9, 0x3, 0x8, 0x2, 0x2,
-            0x2, 0x9, 0x9, 0xF, 0x3, 0x1, 0xD, 0x0,
-            0x0, 0x8, 0x2, 0xE, 0xF, 0xA, 0x9, 0x8,
-            0xE, 0xC, 0x4, 0xE, 0x6, 0xC, 0x8, 0x9,
-            0x4, 0x5, 0x2, 0x8, 0x2, 0x1, 0xE, 0x6,
-            0x3, 0x8, 0xD, 0x0, 0x1, 0x3, 0x7, 0x7,};
-
-        for (int start = 0; start < expected.length; start++) {
-            for (int count = 0; count < expected.length - start; count++) {
-                byte[] digits = PiDigits.getDigits(start, count,2);
-                System.out.println(Main.bytesToHex(digits));
-                assertEquals(count, digits.length);
-
-                for (int i = 0; i < digits.length; i++) {
-                    assertEquals(expected[start + i], digits[i]);
-                }
-            }
-        }
-    }
-    
-    @Test
-    public void piGenTest3Threads() throws Exception {
-
-        byte[] expected = new byte[]{
-            0x2, 0x4, 0x3, 0xF, 0x6, 0xA, 0x8, 0x8,
-            0x8, 0x5, 0xA, 0x3, 0x0, 0x8, 0xD, 0x3,
-            0x1, 0x3, 0x1, 0x9, 0x8, 0xA, 0x2, 0xE,
-            0x0, 0x3, 0x7, 0x0, 0x7, 0x3, 0x4, 0x4,
-            0xA, 0x4, 0x0, 0x9, 0x3, 0x8, 0x2, 0x2,
-            0x2, 0x9, 0x9, 0xF, 0x3, 0x1, 0xD, 0x0,
-            0x0, 0x8, 0x2, 0xE, 0xF, 0xA, 0x9, 0x8,
-            0xE, 0xC, 0x4, 0xE, 0x6, 0xC, 0x8, 0x9,
-            0x4, 0x5, 0x2, 0x8, 0x2, 0x1, 0xE, 0x6,
-            0x3, 0x8, 0xD, 0x0, 0x1, 0x3, 0x7, 0x7,};
-
-        for (int start = 0; start < expected.length; start++) {
-            for (int count = 0; count < expected.length - start; count++) {
-                byte[] digits = PiDigits.getDigits(start, count,3);
-                System.out.println(Main.bytesToHex(digits));
-                assertEquals(count, digits.length);
-
-                for (int i = 0; i < digits.length; i++) {
-                    assertEquals(expected[start + i], digits[i]);
-                }
-            }
-        }
-    }
 
 }
