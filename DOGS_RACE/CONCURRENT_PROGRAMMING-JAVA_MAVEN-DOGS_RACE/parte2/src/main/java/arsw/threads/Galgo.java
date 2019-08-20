@@ -25,7 +25,7 @@ public class Galgo extends Thread {
 			carril.displayPasos(paso);
 			
 			if (paso == carril.size()) {						
-				carril.finish();
+				carril.finish(); 
 				long ub=regl.aumentarUltimaPosicionAlcanzada();
 				System.out.println("El galgo "+this.getName()+" llego en la posicion "+ub);
 				if (ub==1){

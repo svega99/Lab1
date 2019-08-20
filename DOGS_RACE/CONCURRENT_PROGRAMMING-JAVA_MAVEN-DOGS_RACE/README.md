@@ -23,16 +23,16 @@ Creation, commissioning and coordination of threads.
 
 ## Part III
 1.	Fix the application so that the results notice is shown only when the execution of all the ‘greyhound’ threads is finished. For this keep in mind:
-1.	The action of starting the race and showing the results is carried out from line 38 of MainCanodromo.
-2.	The join() method of the Thread class can be used to synchronize the thread that starts the race, with the completion of the greyhound threads.
+	1.	The action of starting the race and showing the results is carried out from line 38 of MainCanodromo.
+	2.	The join() method of the Thread class can be used to synchronize the thread that starts the race, with the completion of the greyhound threads.
 
-	Se añade un join() despues de que se inician los hilos para que se sincronizen. 
+		Se añade un join() despues de que se inician los hilos para que se sincronizen. 
 	
-	![Alt text](img/3.1.1.JPG "CountThread") 
+		![Alt text](img/3.1.1.JPG "CountThread") 
 	
-	Y al ejecutar vemos que ya se menciona correctamente quien es el ganador, pero aun hay un error y es que pueden quedar dos Galgos en la misma posicion.
+		Y al ejecutar vemos que ya se menciona correctamente quien es el ganador, pero aun hay un error y es que pueden quedar dos Galgos en la misma posicion.
 	
-	![Alt text](img/3.1.2.JPG "CountThread") 
+		![Alt text](img/3.1.2.JPG "CountThread") 
 
 2.	Once the initial problem has been corrected, run the application several times, and identify the inconsistencies in the results of the same by seeing the ‘ranking’ shown on the console (sometimes valid results could appear, but in other cases such inconsistencies may occur). From this, identify the critical regions of the program.
 
@@ -47,6 +47,8 @@ Creation, commissioning and coordination of threads.
 	![Alt text](img/3.3.1.JPG "CountThread")
 	
 	![Alt text](img/3.3.2.JPG "CountThread")
+	
+	Asi en la clase Galgo solo seria necesario llamar a un metodo que no generara inconsistencias.
 	
 	![Alt text](img/3.3.3.JPG "CountThread")
 
