@@ -84,6 +84,6 @@ Para ejecutar la carrera es necesario compilar el paquete y luego ejecutarlo en 
 	
 	Durante la ejecucion observamos que la carrera se detiene cuando se oprime "Stop" y se reanuda y termina cuando se oprime "Continue"
 	
-	![Alt text](img/3.4.3.JPG "CountThread")
+	![Alt text](img/3.4.3.jpg "CountThread")
 	
-	![Alt text](img/3.4.4.JPG "CountThread")
+	![Alt text](img/3.4.4.jpg "CountThread")
