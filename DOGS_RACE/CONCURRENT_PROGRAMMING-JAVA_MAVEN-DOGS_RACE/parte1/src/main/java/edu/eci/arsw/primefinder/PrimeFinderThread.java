@@ -3,7 +3,7 @@ package edu.eci.arsw.primefinder;
 import java.util.LinkedList;
 import java.util.List;
 
-import arsw.threads.MainCanodromo;
+
 
 public class PrimeFinderThread extends Thread{
 

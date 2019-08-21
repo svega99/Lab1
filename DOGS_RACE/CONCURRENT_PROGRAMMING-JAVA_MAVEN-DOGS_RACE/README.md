@@ -1,9 +1,14 @@
 # Dogs Race case
 
+## Part I
+
 ## Compile and run instructions.
 
+Para ejecutar la primera parte es necesario compilar el paquete y luego ejecutarlo en la carpeta **CONCURRENT_PROGRAMMING-JAVA_MAVEN-DOGS_RACE\parte1** de la siguiente manera.
 
-## Part I
+![Alt text](img/Compile1.1.JPG)
+![Alt text](img/Compile1.2.JPG) 
+
 Creation, commissioning and coordination of threads.
 
 1.	Review the "concurrent cousins" program (in the folder part1), provided in the package edu.eci.arsw.primefinder. This is a program that calculates the prime numbers between two intervals, distributing their search among independent threads. For now, it has a single thread that seeks cousins ​​between 0 and 30,000,000. Run it, open the operating system process manager, and verify how many cores are used by it.
@@ -25,6 +30,15 @@ Creation, commissioning and coordination of threads.
 3.	What you have been asked for is: you must modify the application so that when 5 seconds have elapsed since the execution started, all the threads are stopped and the number of primes ​​found so far is displayed. Then, you must wait for the user to press ENTER to resume their execution.
 
 ## Part III
+
+## Compile and run instructions.
+
+Para ejecutar la carrera es necesario compilar el paquete y luego ejecutarlo en la carpeta **CONCURRENT_PROGRAMMING-JAVA_MAVEN-DOGS_RACE\parte2** de la siguiente manera.
+
+![Alt text](img/Compile2.1.JPG)
+![Alt text](img/Compile2.2.JPG) 
+
+
 1.	Fix the application so that the results notice is shown only when the execution of all the ‘greyhound’ threads is finished. For this keep in mind:
 	1.	The action of starting the race and showing the results is carried out from line 38 of MainCanodromo.
 	2.	The join() method of the Thread class can be used to synchronize the thread that starts the race, with the completion of the greyhound threads.

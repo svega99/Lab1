@@ -5,7 +5,7 @@
 
 ## Compile and run instructions.
 
-Para ejecutar la primera parte es necesario compilar el paquete y luejo ejecutarlo en la carpeta **PARALLELISM-JAVA_THREADS_MAVEN-INTRODUCTION_BBP_FORMULA** de la siguiente manera.
+Para ejecutar la primera parte es necesario compilar el paquete y luego ejecutarlo en la carpeta **PARALLELISM-JAVA_THREADS_MAVEN-INTRODUCTION_BBP_FORMULA** de la siguiente manera.
 
 ![Alt text](img/Compile1.1.JPG)
 ![Alt text](img/Compile1.2.JPG)  
@@ -88,4 +88,4 @@ From the above, implement the following sequence of experiments to calculate the
 
 5.	500 threads 
 
-	![Alt text](img/3.5.JPG)
+	
