@@ -11,7 +11,7 @@ public class PrimeFinderThread extends Thread{
 	int a,b;
 	
 	private List<Integer> primes=new LinkedList<Integer>();
-	private boolean pausa=false;
+
 	
 	public PrimeFinderThread(int a, int b) {
 		super();
@@ -33,8 +33,9 @@ public class PrimeFinderThread extends Thread{
 	
 	public void pause() {
 		synchronized (this) {
-    	    while (pausa) {
+    	    while (Main.isPausa()) {
     	    	try {
+    	    		
 					this.wait();
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block

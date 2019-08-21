@@ -1,11 +1,15 @@
 package edu.eci.arsw.primefinder;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class Main {
 	
 	private static boolean Pausa=false;
+	static Timer timer;
+	
 
 	public static void main(String[] args) {
 		
@@ -16,23 +20,17 @@ public class Main {
 		pft2.start();
 		pft3.start();
 		
-		
-		
+	    
 	}
 	
 	public static boolean isPausa() {
 		return Pausa;
 	}
 
-
-
 	public static void setPausa(boolean pausa) {
 		Pausa = pausa;
 		
 	}
 	
-	
-	        
-
-	       
+       
 }
